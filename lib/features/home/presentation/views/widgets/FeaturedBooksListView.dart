@@ -1,8 +1,8 @@
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_list_view_item.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/CustomFeaturedBookImage.dart';
 import 'package:flutter/material.dart';
 
-class FeaturedListViewItem extends StatelessWidget {
-  const FeaturedListViewItem({super.key});
+class FeaturedBooksListView extends StatelessWidget {
+  const FeaturedBooksListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class FeaturedListViewItem extends StatelessWidget {
       itemCount: 10,
       scrollDirection: Axis.horizontal,
       itemBuilder: (context, index) {
-        return CustomListViewItem();
+        return CustomFeaturedBookImage();
       },
     );
   }
