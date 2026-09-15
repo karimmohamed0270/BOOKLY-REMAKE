@@ -1,7 +1,5 @@
-import 'package:bookly_app/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/get_navigation.dart';
-import 'package:get/state_manager.dart';
+import 'package:go_router/go_router.dart';
 
 class SpalachViewBody extends StatefulWidget {
   const SpalachViewBody({super.key});
@@ -22,11 +20,7 @@ class _SpalachViewBodyState extends State<SpalachViewBody>
 
     // last step transation when i create the new Screen
     Future.delayed(const Duration(seconds: 2), () {
-      Get.to(
-        HomeView(),
-        transition: Transition.fadeIn,
-        duration: Duration(milliseconds: 300),
-      );
+      GoRouter.of(context).push('/home');
     });
   }
 
