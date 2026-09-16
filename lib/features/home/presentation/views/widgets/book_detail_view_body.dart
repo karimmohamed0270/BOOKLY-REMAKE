@@ -1,5 +1,6 @@
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/core/widgets/custom_btn.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 
@@ -43,6 +44,34 @@ class BookDetailViewBody extends StatelessWidget {
               style: Styles.textStyle16.copyWith(color: Colors.grey),
             ),
           ],
+        ),
+
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+          child: Row(
+            children: [
+              Expanded(
+                child: CustomBtn(
+                  text: "19.99EGP",
+                  btnColor: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(24),
+                    bottomLeft: Radius.circular(24),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: CustomBtn(
+                  text: "Free Preview",
+                  btnColor: Colors.orange,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(24),
+                    bottomRight: Radius.circular(24),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ],
     );
