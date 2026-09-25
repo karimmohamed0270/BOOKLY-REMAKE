@@ -17,10 +17,12 @@ class HomeRepoImp implements HomeRepo {
         endpoint: '&q=subject:programming&Filtering=free-ebooks',
       );
       List<Book> books = [];
-      books.add(Book.fromJson(data));
+      for (var item in data['items']) {
+        books.add(Book.fromJson(item));
+      }
       return right(books);
     } on DioException catch (e) {
-      return left(ServerFailure(e.message ?? 'Something went wrong'));
+      return left(ServerFailure.fromDioError(e));
     } catch (e) {
       return left(ServerFailure(e.toString()));
     }
@@ -33,10 +35,12 @@ class HomeRepoImp implements HomeRepo {
         endpoint: '&q=subject:programming&sortBy=newest&Filtering=free-ebooks',
       );
       List<Book> books = [];
-      books.add(Book.fromJson(data));
+      for (var item in data['items']) {
+        books.add(Book.fromJson(item));
+      }
       return right(books);
     } on DioException catch (e) {
-      return left(ServerFailure(e.message ?? 'Something went wrong'));
+      return left(ServerFailure.fromDioError(e));
     } catch (e) {
       return left(ServerFailure(e.toString()));
     }
